@@ -27,6 +27,16 @@ export class BlogComponent{
   body:string="";
   comments:any[] ;
 
+  singlecomment :any ={
+
+    id:0,
+    postId :0,
+    body : "",
+    name:"",
+    email:""
+
+
+  };
 
 constructor(private actRoute:ActivatedRoute, private _lastblog : blogService) {
  
@@ -49,7 +59,16 @@ constructor(private actRoute:ActivatedRoute, private _lastblog : blogService) {
               this.comments= data[2];
             }
           );
+
+
+
   }
+        
+          setComment(valus:any){
+
+            this.comments.push(this.singlecomment);
+
+          }
 
 
 }

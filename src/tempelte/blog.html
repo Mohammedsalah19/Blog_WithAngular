@@ -19,7 +19,59 @@
 
 <div>
 
-  
+
+   
+
+    <div class="col-md-12">
+      <h2>Write Comment</h2>
+      <form  novalidate #commentForm="ngForm" (ngSubmit)="setComment(commentForm.value)">
+       
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input minlength="5" [(ngModel)]="singlecomment.name" type="text" name="name" #nameRef="ngModel" class="form-control" id="name"placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="Eail">Name</label>
+          <input pattern="" [(ngModel)]="singlecomment.Email" type="text" name="Eamil"#EmailRef="ngModel" class="form-control" id="name"placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Comment</label>
+          <textarea minlength="15" [(ngModel)]="singlecomment.body" type="text" name="body"#CommentRef="ngModel" class="form-control" id="name"placeholder="Name"></textarea>
+        </div>
+
+         <button [disabled]="commentForm.invalid" type="submit" class="btn btn-defualt">Submit </button>
+
+
+      </form>
+
+<div *ngIf="commentForm.invalid &&(commentForm.dirty ||commentForm.touched)" class="alert alert-warning">
+
+  <div *ngIf="nameRef.invalid">
+
+  <p [hidden]="!nameRef.errors.minlength"> please name omre than 5 letters</p>
+
+  </div>
+<!--
+  <div *ngIf="EmailRef.invalid">
+
+  <p [hidden]="!EmailRef.errors.pattern">>Write email like exm@blog.com</p>
+
+  </div>
+-->
+  <div *ngIf="CommentRef.invalid">
+
+    <p [hidden]="!CommentRef.errors.minlength"> comment at least  15 letter</p>
+  </div>
+</div>
+
+
+    </div>
+
+ 
+
+
 
 <div class="text-center"> 
   <h2>comments  </h2>
@@ -37,3 +89,5 @@
     
   </div>
 </div>
+
+

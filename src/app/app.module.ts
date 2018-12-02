@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 
+//impot for form validation
+import { FormsModule }   from '@angular/forms';
     // import routing
 import { homeComponent }  from './home';
 import { aboutComponent }  from './about';
@@ -15,7 +17,7 @@ import { routing }  from './rout';
 import {HttpModule} from '@angular/http';
 
 @NgModule({
-  imports:      [ BrowserModule ,routing,HttpModule],
+  imports:      [ BrowserModule ,routing,HttpModule,FormsModule],
 
    declarations: [
      AppComponent,
