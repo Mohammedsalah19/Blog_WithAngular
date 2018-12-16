@@ -45,6 +45,12 @@ constructor(private actRoute:ActivatedRoute, private _lastblog : blogService) {
   ngOnInit()
     {
 
+
+var re=  this._lastblog.getmessage();
+ console.log(re);
+
+/*
+
   this.id=this.actRoute.snapshot.params['id'];
 
         Observable.forkJoin(
@@ -59,9 +65,6 @@ constructor(private actRoute:ActivatedRoute, private _lastblog : blogService) {
               this.comments= data[2];
             }
           );
-
-
-
   }
         
           setComment(valus:any){
@@ -70,5 +73,5 @@ constructor(private actRoute:ActivatedRoute, private _lastblog : blogService) {
 
           }
 
-
+*/
 }
